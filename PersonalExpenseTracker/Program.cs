@@ -23,7 +23,11 @@ class Program
             Console.WriteLine("\n================================");
 
             Console.WriteLine("  WELCOME TO PERSONAL EXPENSE TRACKER,MANAGE YOUR EXPENSES EASILY");
+
             Console.WriteLine("     Track your spending wisely!");
+
+            Console.WriteLine("     Rebase practice branch");
+
 
             Console.WriteLine("================================");
             Console.WriteLine("1. Add Expense");
