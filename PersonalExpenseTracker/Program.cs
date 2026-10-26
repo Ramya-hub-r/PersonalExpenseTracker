@@ -26,7 +26,8 @@ class Program
             Console.WriteLine("1. Add Expense");
             Console.WriteLine("2. View Expenses");
             Console.WriteLine("3. View Total Expenses");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Search Expenses by Category");
+            Console.WriteLine("5. Exit");
             Console.Write("Choose an option: ");
 
             string choice = Console.ReadLine() ?? "";
@@ -46,6 +47,10 @@ class Program
                     break;
 
                 case "4":
+                    SearchExpensesByCategory();
+                    break;
+
+                case "5":
                     running = false;
                     Console.WriteLine("Thank you for using Expense Tracker!");
                     break;
@@ -116,4 +121,33 @@ class Program
 
         Console.WriteLine($"Total expenses: {total:F2}");
     }
+
+    static void SearchExpensesByCategory()
+    {
+        Console.Write("Enter category to search: ");
+        string category = Console.ReadLine() ?? "";
+
+        bool found = false;
+
+        foreach (Expense expense in expenses)
+        {
+            if (expense.Category.Equals(
+                category, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine(
+                    $"Date: {expense.Date:yyyy-MM-dd} | " +
+                    $"Category: {expense.Category} | " +
+                    $"Amount: {expense.Amount:F2} | " +
+                    $"Description: {expense.Description}");
+
+                found = true;
+            }
+        }
+
+        if (!found)
+        {
+            Console.WriteLine("No expenses found for this category.");
+        }
+    }
+
 }
