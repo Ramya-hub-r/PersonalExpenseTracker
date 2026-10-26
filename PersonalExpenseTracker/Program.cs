@@ -21,7 +21,9 @@ class Program
         while (running)
         {
             Console.WriteLine("\n================================");
-            Console.WriteLine("     YOUR PERSONAL EXPENSE TRACKER");
+
+            Console.WriteLine("  WELCOME TO PERSONAL EXPENSE TRACKER,MANAGE YOUR EXPENSES EASILY");
+
             Console.WriteLine("================================");
             Console.WriteLine("1. Add Expense");
             Console.WriteLine("2. View Expenses");
